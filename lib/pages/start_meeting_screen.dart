@@ -9,6 +9,7 @@ import 'package:flutter_zoom_plugin/zoom_view.dart';
 import 'package:flutter_zoom_plugin/zoom_options.dart';
 
 import 'package:flutter/material.dart';
+import 'package:zoom_lutter/config/keys.dart';
 
 class StartMeetingWidget extends StatelessWidget {
 
@@ -20,8 +21,8 @@ class StartMeetingWidget extends StatelessWidget {
   StartMeetingWidget({Key key, meetingId}) : super(key: key) {
     this.zoomOptions = new ZoomOptions(
       domain: "zoom.us",
-      appKey: "appKey",
-      appSecret: "appSecret",
+      appKey: ZoomConfig.apiKey,
+      appSecret: ZoomConfig.apiSecret,
     );
     this.meetingOptions = new ZoomMeetingOptions(
         userId: '<zoom_user_id>',

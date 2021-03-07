@@ -35,8 +35,8 @@ class _JoinWidgetState extends State<JoinWidget> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: TextField(
+                  keyboardType: TextInputType.phone,
                     controller: meetingIdController,
-                    onChanged: (v) => meetingIdController.text = v,
                     decoration: InputDecoration(
                       labelText: 'Meeting ID',
                     )),
@@ -45,7 +45,6 @@ class _JoinWidgetState extends State<JoinWidget> {
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: TextField(
                     controller: meetingPasswordController,
-                    onChanged: (v) => meetingPasswordController.text = v,
                     decoration: InputDecoration(
                       labelText: 'Meeting Password',
                     )),
