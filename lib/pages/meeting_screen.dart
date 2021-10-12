@@ -5,21 +5,24 @@
 import 'dart:async';
 import 'dart:io';
 
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_zoom_plugin/zoom_view.dart';
+
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_zoom_plugin/zoom_options.dart';
 
 import 'package:flutter/material.dart';
-import 'package:zoom_lutter/config/keys.dart';
+// import 'package:zoom_lutter/config/keys.dart';
 
 class MeetingWidget extends StatefulWidget {
-  ZoomOptions zoomOptions;
-  ZoomMeetingOptions meetingOptions;
+  late ZoomOptions zoomOptions;
+  late ZoomMeetingOptions meetingOptions;
 
-  MeetingWidget({Key key, meetingId, meetingPassword}) : super(key: key) {
+  MeetingWidget({Key? key, meetingId, meetingPassword}) : super(key: key) {
     this.zoomOptions = new ZoomOptions(
       domain: "zoom.us",
-      appKey: ZoomConfig.apiKey,
-      appSecret: ZoomConfig.apiSecret,
+      appKey: "ZoomConfig.apiKey",
+      appSecret: "ZoomConfig.apiSecret",
     );
     this.meetingOptions = new ZoomMeetingOptions(
       userId: 'flutter client',
@@ -39,7 +42,7 @@ class MeetingWidget extends StatefulWidget {
 }
 
 class _MeetingWidgetState extends State<MeetingWidget> {
-  Timer timer;
+  Timer? timer;
 
   bool _isMeetingEnded(String status) {
     var result = false;
@@ -53,10 +56,8 @@ class _MeetingWidgetState extends State<MeetingWidget> {
     return result;
   }
 
-
   @override
   void dispose() {
-
     super.dispose();
   }
 
